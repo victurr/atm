@@ -1,6 +1,14 @@
 *{
 
 }
-body {
-  
+body{
+  background-color: black;
+  color: white;
+}
+p.large{
+  font-weight: 900;
+  font-size: 2em;
+}
+button#btn{
+  color: green;
 }
