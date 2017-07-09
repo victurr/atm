@@ -1,7 +1,13 @@
 (function(){
-  var clock, count = 0;
+  var date = new Date(), minutes = 0, seconds = 0, hours = 0,
+
+  // create a text saying Digital clock plugin.
+   p = document.createElement("p"),
+  clock, count = 0;
+
   let strt = document.getElementById('strt'),
-      name = document.getElementById('nm');
+      name = document.getElementById('nm'),
+      form = document.getElementById("fm");
 
     strt.addEventListener("click", function() {
       if(count < 1){
@@ -12,31 +18,28 @@
           }
       }
       else {
+        // restart the time  by clearing the tag
 
       }
     })
 
   function start(name) {
-        var minutes = 0, seconds = 0, hours = 0;
-
-        // create a text saying Digital clock plugin.
-        var p = document.createElement("p");
         // create the clock.
-        clock = setInterval(function(){
-          p.textContent = name + ", the time is " + hours + " : " + minutes + " : " + seconds++;
-          p.className = "large";
+        var clock = setInterval(function(){
+          p.textContent = name + ", the time is " + date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
+          p.className = "display_time";
           document.body.appendChild(p);
 
-          // increase the minutes.
-          if(seconds == 60){
-            minutes++;
-            seconds = 0;
-          }
-
-          if(minutes == 60){
-            hours++;
-            minutes = 0;
-          }
+          // // increase the minutes.
+          // if(seconds == 60){
+          //   minutes++;
+          //   seconds = 0;
+          // }
+          //
+          // if(minutes == 60){
+          //   hours++;
+          //   minutes = 0;
+          // }
 
         }, 1000);
   }
