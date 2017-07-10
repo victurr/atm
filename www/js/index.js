@@ -1,13 +1,11 @@
 (function(){
   var date = new Date(), minutes = date.getMinutes(), seconds = date.getSeconds(), hours = date.getHours(),
-
-  // create a text saying Digital clock plugin.
-   p = document.createElement("p"),
   clock, count = 0;
 
   let strt = document.getElementById('strt'),
       name = document.getElementById('nm'),
-      form = document.getElementById("fm");
+      form = document.getElementById("fm"),
+      tm = document.getElementById("tm");
 
     strt.addEventListener("click", function() {
       if(count < 1){
@@ -34,9 +32,7 @@
   function start(name) {
         // create the clock.
         var clock = setInterval(function(){
-          p.textContent = name + ", the time is " + hours + " : " + minutes + " : " + seconds++ + ap();
-          p.className = "display_time";
-          document.body.appendChild(p);
+          tm.innerHTML = name + ", the time is " + hours + " : " + minutes + " : " + seconds++ + ap();
 
           // increase the minutes.
           if(seconds == 60){
