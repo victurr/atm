@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width user-scalable= no">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body onload="onBodyLoad()">
+  <p id="geolocation">Finding geolocation...</p>
 
+<script type="text/javascript" charset="utf-8"> function onBodyLoad() {
+  document.addEventListener("deviceready",onDeviceReady,false);}
+      function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      }
+
+        function onSuccess(position) {
+           var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: '  + position.coords.latitude
+             + '<br />' + 'Longitude: ' + position.coords.longitude + '<br />';
+          }
+        function onError(error) {
+           alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+       }
+      </script>
+     </body>
+</html>
+
+
+
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,4 +68,4 @@
 
     <script type="text/javascript" src="js/index.js"></script>
   </body>
-</html>
+</html> -->
