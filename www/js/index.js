@@ -1,5 +1,4 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-}
+document.addEventListener("deviceready", onDeviceReady, false);}
     function onDeviceReady() {
       var date = new Date(), minutes = date.getMinutes(), seconds = date.getSeconds(), hours = date.getHours(),
       clock, count = 0;
@@ -21,7 +20,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
           // restart the time  by clearing the tag
 
         }
-      })
+      });
+
       function ap() {
         if (hours > 11) {
           return " pm";
@@ -52,9 +52,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
             minutes = 0;
             seconds = 0;
           }
-
         }, 1000);
       }
+
       function stop(){
         var btn = document.getElementById("btn");
         btn.addEventListener("click", function() {
@@ -62,5 +62,4 @@ document.addEventListener("deviceready", onDeviceReady, false);
         })
       }
       stop();
-    })();
-    }
+  }
